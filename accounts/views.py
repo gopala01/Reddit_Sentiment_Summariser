@@ -20,13 +20,17 @@ def register(request):
             email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(request, username=email, password=raw_password)
-            # if user is not None:
-            #     login(request, user=email)
-            #     return redirect('accounts/login.html')
-            return redirect('open')
+            if user is not None:
+                login(request, user=username)
+                # return redirect('accounts/login.html')
+                return redirect('open')
+            else:
+                return render(request, 'accounts/register.html', {'form': form, 'error': 'Authentication failed'})
+        else:
+            return render(request, 'accounts/register.html', {'form': form})
     else:
         form = UserRegistrationForm()
-    return render(request, 'accounts/register.html', {'form': form})
+        return render(request, 'accounts/register.html', {'form': form})
 
 
 
