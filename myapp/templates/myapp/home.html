@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    </head>
+
+    <body>
+        <div class="content-wrapper">
+            <div class="title-container">
+                <h2 id="portfolio_intro">My name is Gopala Bhamidipati</h2>
+                <h2 id="portfolio_intro">This is the Reddit Sentiment Summariser</h2>
+            </div>
+            <div class="form-container">
+                <form action="/myapp/fetch_subreddit/" method="post" class="search-form" style="display: inline-block;">
+                    {% csrf_token %}
+                    <input name="subreddit" type="text" placeholder="Please search a subreddit" class="search-input">
+                    <input type="submit" value="Search" class="search-button">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+

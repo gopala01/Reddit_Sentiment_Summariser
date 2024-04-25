@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+html, body{
+    /* margin: 0em;
+    padding: 0em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    background-color: #363945;
+    color: white; */
+
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    padding: 20px;
+    line-height: 1.6;
+
+}
+
+h1 {
+    font-size: 24px; /* Larger size for the main title */
+    text-align: center; /* Centers the title */
+    margin-bottom: 30px; /* More space below the main title */
+}
+
+h3 {
+    font-size: 20px; 
+    margin-top: 20px;
+}
+
+
+
+.content-wrapper {
+
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1E1E1E; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.text-container {
+    background-color: #252525; /* Slightly different background for contrast */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    color: #E0E0E0; /* Light text for readability */
+}
+
+.text-container h1, .text-container h3 {
+    color: #FFFFFF; /* Ensures headers are clearly visible */
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    background-color: #2C2C2C; /* Dark background for paragraph */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px; /* Adds space between paragraphs */
+    border-left: 4px solid #007bff; /* Adds a colored border to the left for visual interest */
+}
+
+
+.title-container {
+    text-align: center;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.title-container h2 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+
+
+.form-container {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.search-form {
+    display: inline-block;
+    background: #2C2C2C;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.search-input, .search-button {
+    display: inline-block;
+    background: #2C2C2C;
+    padding: 10px;
+    color: #E0E0E0;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.search-input {
+    width: calc(100% - 120px);
+    margin-right: 10px;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    /* border-color: #007bff; */
+
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .search-input {
+        width: calc(100% - 130px);
+    }
+
+    .content-wrapper {
+        padding: 15px;
+    }
+
+    .text-container {
+        padding: 15px;
+    }
+
+    .text-container p {
+        padding: 8px; /* Adjusts padding for smaller screens */
+    }
+
+    h1, h3 {
+        margin-left: 10px; /* Adjusts margin for smaller screens for better alignment */
+        margin-right: 10px;
+    }
+}
+
