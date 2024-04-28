@@ -16,7 +16,10 @@
                 <h2 id="portfolio_intro">This is the Reddit Sentiment Summariser</h2>
             </div>
             <div class="form-container">
+
+                <!-- Form to send data to server and handle data extraction from subreddits -->
                 <form action="/myapp/fetch_subreddit/" method="post" class="search-form" style="display: inline-block;">
+                    <!-- CSRF token to protect against cross-site request forgery attacks -->
                     {% csrf_token %}
                     <input name="subreddit" type="text" placeholder="Please search a subreddit" class="search-input">
                     <input type="submit" value="Search" class="search-button">

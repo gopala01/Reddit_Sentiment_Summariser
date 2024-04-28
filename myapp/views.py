@@ -1,16 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .processing_data.reddit_api import fetch_subreddit
-from .forms import UserRegistrationForm
-from django.contrib.auth import authenticate, login
-
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm
 
 
 @login_required
 def home(request):
     return render(request, 'myapp/home.html', {'first_name': request.user.first_name})
-# Successufl login leads to front page and the first name is stored
+# Successufl login leads to the front page and the first name is stored
 
 def fetch_subreddit_view(request):
     if request.method == "POST":
@@ -19,5 +15,8 @@ def fetch_subreddit_view(request):
             'positive': positive_summary, 
             'negative': negative_summary
         })
+    # Goes to results page with positive summary and negative summary
     else:
         return render(request, 'home.html')
+    
+    

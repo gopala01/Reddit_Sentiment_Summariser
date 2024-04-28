@@ -19,6 +19,7 @@
             <div class="text-container">
                 <h1>Results</h1>
     
+                <!-- Returning results line by line -->
                 <h3>Positive Sentiments</h3>
                     {% for p in positive %}
                     <p>{{ p }}</p>
@@ -28,6 +29,8 @@
                     <p>{{ n }}</p>
                     {% endfor %}
             </div>
+
+            <!-- Return button to go back to home page -->
 
             <a href="{% url 'home' %}" class="button">Return</a>
 

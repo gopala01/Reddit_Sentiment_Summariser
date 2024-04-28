@@ -14,6 +14,7 @@
             <h2>Register</h2>
         </div>
         <div class="form-container">
+            <!-- Form to register -->
             <form method="post" action="{% url 'register' %}" class="validationForm" style="display: inline-block;">
                 {% csrf_token %}
                 {{ form.as_p }}
