@@ -10,15 +10,26 @@ from myapp.processing_data.reddit_api import fetch_subreddit
 class TestRedditAPI(TestCase):
     @patch('myapp.processing_data.reddit_api.reddit')
     def test_fetch_subreddit_posts(self, mock_reddit):
+
+        # Setting up client object
         self.client = Client()
+
+        # Ensure correct URL name is called
         self.subreddit_url = reverse('fetch_subreddit')
+
+        # Setting up mock objects
         mock_subreddit = MagicMock()
         mock_reddit.subreddit.return_value = mock_subreddit
+
+        # Perform request to test client
         response = self.client.post(self.subreddit_url, {'subreddit': 'python'})
+
+        # Check Reddit API is called correctly
         mock_reddit.subreddit.assert_called_once_with('python')
         mock_subreddit.new.assert_called_once_with(limit=10)
-        self.assertEqual(response.status_code, 200)
+
         # Verify the response status code is 200
+        self.assertEqual(response.status_code, 200)
 
         
 class TestSentimentText(TestCase):
