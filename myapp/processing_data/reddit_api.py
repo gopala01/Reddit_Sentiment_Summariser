@@ -1,7 +1,5 @@
-# Reddit API Details
 import praw
 import requests
-from .text_processing import clean_text
 from .sentiment_analysis import sentiment_text, get_sentiment_score
 from .summarization import summarize_positive_text, summarize_negative_text
 CLIENT_ID = '7o7pycD5otZLxgEpThvvzw'
@@ -67,8 +65,5 @@ def fetch_subreddit(request):
         print(f"Score of negative summary is {get_sentiment_score(negative_summary)}")
         print(f"Number of negative summary texts is is {len(negative_summary)}")
         print(f"Length of negative summary  text is {sumNegativeSummary}")
-
-        # positive_summary = post_process_text(positive_summary)
-        # negative_summary = post_process_text(negative_summary)
 
         return positive_summary, negative_summary

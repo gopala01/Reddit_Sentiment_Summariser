@@ -43,7 +43,6 @@ def user_login(request):
             login(request, user)
             return redirect('home')
         else:
-            # Return an 'invalid login' error message.
             return render(request, 'accounts/login.html', {'error': 'Invalid username or password.'})
     else:
         return render(request, 'accounts/login.html')

@@ -15,13 +15,16 @@ def get_sentiment_score(texts):
         sum_scores = 0
         for text in texts:
             score = sia.polarity_scores(text)['compound']
-            print(score)  # Print each score
+            print(score)
+              # Print each score for testing
             sum_scores += score
-        average_score = sum_scores / len(texts) if texts else 0  # Calculate the average score
+        average_score = sum_scores / len(texts) if texts else 0
+        # Calculate the average score
         return average_score
     else:
         score = sia.polarity_scores(texts)['compound']
-        print(f"Summary: {texts} - Score: {score}\n")  # Print the score for the single text
+        print(f"Summary: {texts} - Score: {score}\n")  
+        # Print the score for the single text
         return score
     
 def sentiment_text(texts):

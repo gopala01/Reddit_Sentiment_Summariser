@@ -16,7 +16,6 @@ def generate_positive_summary(text):
                                         # max_length = 150,
                                         max_new_tokens = 100,
                                         # min_length = 75,
-                                        # # Try without these two
                                         # do_sample = False,
                                         # top_p = 0.7, 
                                         repetition_penalty = 2.0,
